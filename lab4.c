@@ -2,6 +2,20 @@
 #include <stdio.h>
 #include <math.h>
 
+void apagaMatriz ( int linha, double** matriz )
+{
+
+    for ( int i = 0; i < linha; i++ )
+    {
+
+        free ( matriz [ i ] ) ;
+
+    }
+
+    free ( matriz ) ;
+
+}
+
 // função que coloca o novo valor de z na matriz desejada
 double** novaMatriz ( int linha, double dP , double media, double** matriz )
 {
@@ -154,7 +168,7 @@ int main ( void )
 
     printaMatriz ( lin, media, dP, matriz ) ;
 
-    free ( matriz ) ;
+    apagaMatriz ( lin, matriz ) ;
 
     return 0 ;
 
